@@ -1,0 +1,53 @@
+// C++ practice
+// In this program the user will be asked to input information about their dog, the info will be outputted in a special way. 
+// Main Idea: Calculate dog's age in human years for puppy's and older dogs.
+// Problem with code: users dog names get the first letter cut off from output
+
+#include <iostream>
+
+int main() {
+
+int userDogAge; // age of dog
+float humanYears; // human years for puppys
+int humanYearsOld; // human years for dog's above 2 years
+
+
+std::cout << "Please enter your dog's age in years\n";
+std::cin >> userDogAge;
+std::string userDogBreed;
+std::cout << "Please enter your dog's breed.\n"; // dog breed
+std::cin.ignore(); // Used because the output was not waiting for the inputs of multiple questions
+getline(std::cin, userDogBreed); // getline used to get full line since dog breeds can be more than one word
+std::string userDogName; // dog's name
+std::cout << "Please press the space bar and follow the space by entering your dog's name\n"; // Maybe someone can help, Everytime there is no spacebar used the first letter is taken off of the output, example: cin = dog , cout = og
+std::cin.ignore();
+getline(std::cin, userDogName);
+
+
+if (userDogAge > 0 && userDogAge <=2) { // looking for when the users dog is 
+
+float earlyYears = 10.5; // dogs age 21 human years the first 2 years of their lives
+
+humanYears = 10.5 * userDogAge; // if dog is 2 or younger the dog's age is multiplied with how old a dog gets in first year of it's life up until 2 years
+
+std::cout << "          " << userDogName << "          " << std::endl;
+std::cout << "My name is " << userDogName << "! My parents say I am a " << userDogBreed << " but I'm actually their best friend!\n";
+std::cout << "I'm " << userDogAge << " years old but in human years that's " << humanYears << " years old. That's right, I'm still a puppy!\n";
+} else if (userDogAge > 2) {
+    
+    int olderYears = userDogAge * 4; // dogs human age after the first two years
+
+  humanYearsOld = 21 + olderYears; // dogs are 21 human years after first 2 years add to years after first two
+
+std::cout << "          " << userDogName << "          " << std::endl;
+std::cout << "My name is " << userDogName << "! My parents tell me I am a " << userDogBreed << ", I don't know what a " << userDogBreed << " is but I do know what one thing,\n";
+std::cout << "I'm " << userDogAge << " years old and counting! but it makes more sense to you to say I am " << humanYearsOld << " years old!";
+std::cout << " I may be older then those crazy puppy's but I still know how to chase down a tennis ball or two!\n";
+} else {
+std::cout << "Incorrect input, please try again.\n";
+
+}
+
+return 0;
+
+}
