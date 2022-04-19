@@ -1,3 +1,5 @@
+import random
+
 print('*****Random Number Guess Menu*****')
 print('You have 3 guesses to answer correctly')
 print('The number lies between 1 and 10')
